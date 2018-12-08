@@ -8,7 +8,8 @@ class Ifscode extends Component {
     super(props);
     this.state = {
       ifscode: "",
-      bankDetails: ""
+      bankDetails: "",
+      searchIfscode:[]
     };
   }
 
@@ -33,8 +34,13 @@ class Ifscode extends Component {
           bankDetailsMicrcode: response.data.data.MICRCODE,
           bankDetailsState: response.data.data.STATE
         });
+       
+        // this.searchIfscode.push(this.props.history.location.state.ifscode);
+        // console.log(this.searchIfscode);
+        var joined = this.state.searchIfscode.concat(this.props.history.location.state.ifscode);
+        this.setState({ searchIfscode: joined })
+        console.log(this.state.searchIfscode);
 
-        console.log(response.data.data);
       })
       .catch(err => console.log(err));
   }

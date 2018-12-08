@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class BankDetails extends Component {
   constructor(props) {
@@ -11,6 +11,10 @@ class BankDetails extends Component {
   render() {
     return (
       <div>
+         <br />
+        <Link className="btn grey" to="/">
+          Back
+        </Link>
         <h1>IFSC CODE Details: {this.props.location.state.ifsc}</h1>
         <ul className="collection">
           <li className="collection-item">
